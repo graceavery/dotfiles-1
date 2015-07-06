@@ -1,8 +1,14 @@
-# I make this typo all the time
+# Cocoapods stuff!
+
+# I make the "isntall" typo all the time
+# For 'uninstall', make sure you've got the deintegrate plugin installed
+
 function pod()
 {
   if [ $# -gt 0 ] && [ "$1" == "isntall" ] ; then
      /usr/bin/pod install
+  elif [ $# -gt 0 ] && [ "$1" == "uninstall" ] ; then
+     /usr/bin/pod deintegrate
   else
      /usr/bin/pod "$@"
   fi
