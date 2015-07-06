@@ -23,14 +23,14 @@
 
 
 # USAGE: 
-# s bookmarkname - saves the curr dir as bookmarkname
-# g bookmarkname - jumps to the that bookmark
-# g b[TAB] - tab completion is available
-# p bookmarkname - prints the bookmark
-# p b[TAB] - tab completion is available
-# d bookmarkname - deletes the bookmark
-# d [TAB] - tab completion is available
-# l - list all bookmarks
+# bms bookmarkname - saves the curr dir as bookmarkname
+# bmg bookmarkname - jumps to the that bookmark
+# bmg b[TAB] - tab completion is available
+# bmp bookmarkname - prints the bookmark
+# bmp b[TAB] - tab completion is available
+# bmd bookmarkname - deletes the bookmark
+# bmd [TAB] - tab completion is available
+# bml - list all bookmarks
 
 # setup file to store bookmarks
 if [ ! -n "$SDIRS" ]; then
@@ -42,7 +42,7 @@ RED="0;31m"
 GREEN="0;33m"
 
 # save current directory to bookmarks
-function s {
+function bms {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -53,7 +53,7 @@ function s {
 }
 
 # jump to bookmark
-function g {
+function bmg {
     check_help $1
     source $SDIRS
     target="$(eval $(echo echo $(echo \$DIR_$1)))"
@@ -67,14 +67,14 @@ function g {
 }
 
 # print bookmark
-function p {
+function bmp {
     check_help $1
     source $SDIRS
     echo "$(eval $(echo echo $(echo \$DIR_$1)))"
 }
 
 # delete bookmark
-function d {
+function bmd {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -97,7 +97,7 @@ function check_help {
 }
 
 # list bookmarks with dirnam
-function l {
+function bml {
     check_help $1
     source $SDIRS
         
@@ -108,7 +108,7 @@ function l {
     # env | grep "^DIR_" | cut -c5- | sort |grep "^.*=" 
 }
 # list bookmarks without dirname
-function _l {
+function bm_l {
     source $SDIRS
     env | grep "^DIR_" | cut -c5- | sort | grep "^.*=" | cut -f1 -d "=" 
 }
