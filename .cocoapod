@@ -1,0 +1,9 @@
+# I make this typo all the time
+function pod()
+{
+  if [ $# -gt 0 ] && [ "$1" == "isntall" ] ; then
+     /usr/bin/pod install
+  else
+     /usr/bin/pod "$@"
+  fi
+}

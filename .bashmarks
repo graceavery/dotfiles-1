@@ -24,8 +24,8 @@
 
 # USAGE: 
 # bms bookmarkname - saves the curr dir as bookmarkname
-# bmg bookmarkname - jumps to the that bookmark
-# bmg b[TAB] - tab completion is available
+# bm bookmarkname - jumps to the that bookmark
+# bm b[TAB] - tab completion is available
 # bmp bookmarkname - prints the bookmark
 # bmp b[TAB] - tab completion is available
 # bmd bookmarkname - deletes the bookmark
@@ -53,7 +53,7 @@ function bms {
 }
 
 # jump to bookmark
-function bmg {
+function bm {
     check_help $1
     source $SDIRS
     target="$(eval $(echo echo $(echo \$DIR_$1)))"
