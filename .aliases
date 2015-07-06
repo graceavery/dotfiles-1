@@ -20,6 +20,9 @@ alias brwe=brew
 
 # be nice
 alias please=sudo
+alias pleeease='sudo $(history -p !!)'
+alias pleeeease=pleeease
+alias pleeeeease=pleeease
 
 # i <3 u cask
 alias cask='brew cask'
