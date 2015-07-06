@@ -66,6 +66,17 @@ function bm {
     fi
 }
 
+# i also wanna use cdd instead of bm sometimes.  but if no arg, then go to desktop
+function cdd {
+    source $SDIRS
+    target="$(eval $(echo echo $(echo \$DIR_$1)))"
+    if [ -d "$target" ]; then
+        cd "$target"
+    else
+        cd ~/desktop
+    fi
+}
+
 # print bookmark
 function bmp {
     check_help $1

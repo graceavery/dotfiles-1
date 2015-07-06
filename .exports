@@ -1,4 +1,4 @@
-# Make vim the default editor.
+# Make sublime the default editor.
 export EDITOR='subl -w';
 
 # Enable persistent REPL history for `node`.

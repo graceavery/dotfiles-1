@@ -9,6 +9,7 @@ function pod()
      /usr/bin/pod install
   elif [ $# -gt 0 ] && [ "$1" == "uninstall" ] ; then
      /usr/bin/pod deintegrate
+     rm Podfile.lock
   else
      /usr/bin/pod "$@"
   fi

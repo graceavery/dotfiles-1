@@ -9,7 +9,7 @@ alias -- -="cd -"
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
-alias cdd="cd ~/Desktop"
+#alias cdd="cd ~/Desktop"  #wanna use the same shortcut to also use bashmarks if arg provided
 alias p="cd ~/projects"
 alias g="git"
 alias h="history"
