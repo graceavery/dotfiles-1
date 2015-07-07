@@ -10,6 +10,8 @@ function pod()
   elif [ $# -gt 0 ] && [ "$1" == "uninstall" ] ; then
      /usr/bin/pod deintegrate
      rm Podfile.lock
+     find . -name "*.xcworkspace" -exec rm -rf {} \;
+     echo "Using 'uninstall' instead of 'deintegrate': deleted Podfile.lock and the workspace for ya."
   else
      /usr/bin/pod "$@"
   fi
