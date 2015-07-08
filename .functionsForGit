@@ -1,0 +1,17 @@
+# Git stuff
+
+# I wanna clone and cd into the folder in one command
+
+function git()
+{
+	if [ $# -gt 0 ] && [ "$1" == "clone" ] ; then
+		/usr/bin/git "$@"
+     	if [ -n "$3" ] ; then
+     		cd $(basename $3)
+     	else
+     		cd $(basename $2)
+     	fi
+  	else
+     	/usr/bin/git "$@"
+  	fi
+}
